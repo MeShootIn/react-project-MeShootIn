@@ -1,0 +1,44 @@
+.item {
+    height: 50px;
+    padding: 15px 15px 14px;
+    border-bottom: 1px solid #dddfe0;
+    display: flex;
+}
+
+.title {
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.logo {
+    width: 48px;
+    height: 33px;
+    border-radius: 4px;
+    margin-right: 16px;
+    background-color: #292a30;
+    color: white;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.logo_credit {
+    background-color: #909195;
+}
+
+.logo_external {
+    background-color: #5063d8;
+}
+
+.logo_loan {
+    background: url('res/wallet.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logo_saving {
+    background: url('res/growth.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

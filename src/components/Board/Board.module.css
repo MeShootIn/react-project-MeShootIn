@@ -1,0 +1,12 @@
+.board {
+    width: 276px;
+    padding-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    height: 100vh;
+    box-shadow: 1px 2px 15px 0 rgba(0,0,0,.15);
+    transition: width .25s ease;
+    overflow: scroll;
+}

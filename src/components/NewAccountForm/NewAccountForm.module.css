@@ -1,0 +1,59 @@
+.cardForm {
+  width: 340px;
+  height: 210px;
+  background: #fbfbfb;
+  border: 1px solid #c3c3c3;
+  border-radius: 10px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.input {
+  padding: 16px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  height: 40px;
+  cursor: text;
+  background-clip: padding-box;
+  color: #333333;
+  transition-property: background-color, border-color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease;
+  border: 1px solid #ecf1f7;
+  background-color: #ecf1f7;
+  word-wrap: break-word;
+  font-family: Arial, sans-serif;
+  letter-spacing: inherit;
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.input:focus-within {
+  border: 1px solid black;
+  background: #fff;
+}
+
+.inputDate {
+  width: 60px;
+  margin: 4px 4px 4px 0px;
+  box-sizing: border-box;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: bold;
+  color: grey;
+  margin: 14px 0 4px;
+  display: block;
+}
+
+.validThruFieldset {
+  margin-bottom: 10px;
+}
+
+.validThruFieldset > .inputDate ~ .inputDate {
+  margin-left: 4px;
+}
