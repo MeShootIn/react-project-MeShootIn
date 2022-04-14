@@ -2,8 +2,9 @@ import React, {Fragment, useState} from 'react';
 import Board from './components/Board/Board';
 import NewAccountForm from './components/NewAccountForm/NewAccountForm';
 import styles from './App.module.css';
+import {Account} from "./components/BoardItem/BoardItem";
 
-export const accs = [
+export const accs: Account[] = [
   {
     id: 1,
     type: 'debit',
@@ -50,14 +51,12 @@ export const accs = [
 const App = () => {
   const [accounts, setAccounts] = useState(accs);
 
-  const handleSubmit = (newAccount): void => {
-    setAccounts(prevAccounts => [...prevAccounts, newAccount]);
+  const handleSubmit = (account: Account): void => {
+    setAccounts(prevAccounts => [...prevAccounts, account]);
   };
 
-  // FIXME
   return (
     <Fragment>
-      {/*@ts-ignore*/}
       <Board accounts={accounts}/>
       <div className={styles.pageContent}>
         <NewAccountForm handleSubmit={handleSubmit}/>

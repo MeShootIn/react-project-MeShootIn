@@ -10,13 +10,14 @@
     height: 33px;
     border-radius: 4px;
     margin-right: 16px;
-    background-color: #292a30;
     color: white;
     padding: 0 5px;
     box-sizing: border-box;
 }
 
-/* TODO _debit ??? */
+.logo_debit {
+    background-color: #292a30;
+}
 
 .logo_credit {
     background-color: #909195;

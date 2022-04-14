@@ -7,7 +7,7 @@ interface ButtonProps {
   onClick?: () => void
 }
 
-const Button = ({type, onClick, children}: ButtonProps) => (
+const Button = ({type, onClick, children}: Readonly<ButtonProps>) => (
   <button className={styles.button} type={type} onClick={onClick}>
     {children}
   </button>

@@ -3,20 +3,17 @@ import cn from 'classnames';
 import styles from './BoardItem.module.css';
 import Money, {CurrencyMask, CurrencyProps} from '../Money/Money';
 
-type AccountType = 'debit' | 'credit' | 'external' | 'saving' | 'loan';
+export type AccountType = 'debit' | 'credit' | 'external' | 'saving' | 'loan';
 
-interface ITitle {
+export interface Account extends CurrencyProps {
+  id?: number,
+  type?: AccountType | string, // FIXME
+  amount?: number,
   title: string,
   customTitle?: string
 }
 
-export interface Account extends CurrencyProps, ITitle {
-  id?: number,
-  type?: AccountType | string,
-  amount?: number,
-}
-
-const BoardItem = (account: Account) => (
+const BoardItem = (account: Readonly<Account>) => (
   <div className={styles.item}>
     <div className={cn(styles.logo, styles[`logo_${account.type}`])}>
       {

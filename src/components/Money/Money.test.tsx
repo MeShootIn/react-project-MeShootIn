@@ -2,8 +2,6 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import Money from './Money';
 
-// import ReactDOMServer from 'react-dom/server'; // DEBUG
-
 describe('Money', () => {
   /**
    * Тебе нужно написать код реализации компонента Money в файле Money.js
@@ -65,15 +63,14 @@ describe('Money', () => {
     });
   });
 
-  // FIXME Всегда выдаёт 1, вместо фактического кол-ва (возможно, считает только наружный span, возвращающийся
-  // непосредственно классом Money)
+  /**
+   * FIXME
+   * Всегда выдаёт 1, вместо фактического кол-ва (возможно, считает только наружный span, возвращающийся
+   * непосредственно классом Money)
+   */
   describe('Корректное количество span', () => {
     it('Базовый вид', () => {
       const component = shallow(<Money value={100.69} currency="GBP"/>);
-
-      console.log(component.html());
-      // DEBUG
-      // console.log(ReactDOMServer.renderToStaticMarkup(<Money value={100.69} currency="GBP"/>));
 
       expect(component.find('span').length).toBe(4);
     });
@@ -81,19 +78,11 @@ describe('Money', () => {
     it('Нет копеек', () => {
       const component = shallow(<Money value={100} currency="GBP"/>);
 
-      console.log(component.html());
-      // DEBUG
-      // console.log(ReactDOMServer.renderToStaticMarkup(<Money value={100} currency="GBP"/>));
-
       expect(component.find('span').length).toBe(3);
     });
 
     it('Нет валюты', () => {
       const component = shallow(<Money value={100}/>);
-
-      console.log(component.html());
-      // DEBUG
-      // console.log(ReactDOMServer.renderToStaticMarkup(<Money value={100}/>));
 
       expect(component.find('span').length).toBe(2);
     });

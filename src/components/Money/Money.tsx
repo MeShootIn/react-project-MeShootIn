@@ -4,7 +4,7 @@ interface UnitProps {
   value: number
 }
 
-const BaseUnit = ({value}: UnitProps) => {
+const BaseUnit = ({value}: Readonly<UnitProps>) => {
   const baseUnit = Math.trunc(value);
 
   return (
@@ -12,20 +12,20 @@ const BaseUnit = ({value}: UnitProps) => {
   );
 }
 
-const DerivedUnit = ({value}: UnitProps) => {
-  const getDerivedUnit = (): number => {
-    if (Number.isInteger(value)) {
-      return 0;
-    }
-
-    const decimalStr = value
-      .toString()
-      .split('.')[1];
-
-    return Number(decimalStr);
+const getDerivedUnit = (value): number => {
+  if (Number.isInteger(value)) {
+    return 0;
   }
 
-  const derivedUnit = getDerivedUnit();
+  const decimalStr = value
+    .toString()
+    .split('.')[1];
+
+  return Number(decimalStr);
+}
+
+const DerivedUnit = ({value}: Readonly<UnitProps>) => {
+  const derivedUnit = getDerivedUnit(value);
 
   if (derivedUnit === 0) {
     return null;
@@ -36,7 +36,7 @@ const DerivedUnit = ({value}: UnitProps) => {
   );
 }
 
-type Currency = 'RUB' | 'USD' | 'EUR' | 'GBP';
+export type Currency = 'RUB' | 'USD' | 'EUR' | 'GBP';
 
 const CurrencyMasks: Record<Currency, string> = {
   'RUB': '₽',
@@ -49,7 +49,7 @@ export interface CurrencyProps {
   currency?: Currency
 }
 
-export const CurrencyMask = ({currency}: CurrencyProps) => {
+export const CurrencyMask = ({currency}: Readonly<CurrencyProps>) => {
   if (currency === undefined) {
     return null;
   }
@@ -62,7 +62,7 @@ export const CurrencyMask = ({currency}: CurrencyProps) => {
 interface MoneyProps extends UnitProps, CurrencyProps {
 }
 
-const Money = ({value, currency}: MoneyProps) => (
+const Money = ({value, currency}: Readonly<MoneyProps>) => (
   <span>
     <BaseUnit value={value}/>
     <DerivedUnit value={value}/>
