@@ -1,11 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Button from './Button';
 
 describe('Button', () => {
 	/**
-	 * Тебе нужно написать код реализации компоента Button в файле Button.js
+	 * Тебе нужно написать код реализации компонента Button в файле Button.js
 	 *
 	 * Компонент Button
 	 * Пример использования: <Button onClick={this.handleClick}>Кнопка</Button>

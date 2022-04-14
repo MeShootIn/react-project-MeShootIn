@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-
-import App, { accounts } from './App';
+import App, { accs } from './App';
 import NewAccountForm from './components/NewAccountForm/NewAccountForm';
 import Board from './components/Board/Board';
 
@@ -30,7 +29,7 @@ describe('Интеграционный тест', () => {
   it('обновление стейта App', () => {
     const component = mount(<App />);
     const result = [
-      ...accounts,
+      ...accs,
       { id: Date.now(), type: 'external', title: 'Привязанная карта *4444' },
     ];
 

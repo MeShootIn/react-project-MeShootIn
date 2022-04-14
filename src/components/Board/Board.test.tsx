@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Board from './Board';
 import BoardItem from '../BoardItem/BoardItem';
 
@@ -47,7 +46,7 @@ describe('Board', () => {
         const component = shallow(<Board accounts={accounts} />);
         const boardItems = component.find(BoardItem);
 
-        // отредерилось 11 аккаунтов
+        // отрендерилось 11 аккаунтов
         expect(boardItems.length).toBe(11);
 
         const rightOrder = [

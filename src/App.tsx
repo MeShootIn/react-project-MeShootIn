@@ -1,11 +1,9 @@
-import React, { Component, Fragment } from 'react';
-
+import React, {Fragment, useState} from 'react';
 import Board from './components/Board/Board';
 import NewAccountForm from './components/NewAccountForm/NewAccountForm';
-
 import styles from './App.module.css';
 
-export const accounts = [
+export const accs = [
   {
     id: 1,
     type: 'debit',
@@ -49,31 +47,23 @@ export const accounts = [
   },
 ];
 
-class App extends Component<any, any> {
-  constructor(props) {
-    super(props);
+const App = () => {
+  const [accounts, setAccounts] = useState(accs);
 
-    this.state = {
-      accounts,
-    };
-  }
-
-  handleSubmit = newAccount => {
-    this.setState({
-      accounts: [...this.state.accounts, newAccount],
-    });
+  const handleSubmit = (newAccount): void => {
+    setAccounts(prevAccounts => [...prevAccounts, newAccount]);
   };
 
-  render() {
-    return (
-        <Fragment>
-          <Board accounts={this.state.accounts} />
-          <div className={styles.pageContent}>
-            <NewAccountForm handleSubmit={this.handleSubmit} />
-          </div>
-        </Fragment>
-    );
-  }
+  // FIXME
+  return (
+    <Fragment>
+      {/*@ts-ignore*/}
+      <Board accounts={accounts}/>
+      <div className={styles.pageContent}>
+        <NewAccountForm handleSubmit={handleSubmit}/>
+      </div>
+    </Fragment>
+  );
 }
 
 export default App;

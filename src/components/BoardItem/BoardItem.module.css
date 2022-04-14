@@ -5,11 +5,6 @@
     display: flex;
 }
 
-.title {
-    font-size: 15px;
-    line-height: 21px;
-}
-
 .logo {
     width: 48px;
     height: 33px;
@@ -21,12 +16,21 @@
     box-sizing: border-box;
 }
 
+/* TODO _debit ??? */
+
 .logo_credit {
     background-color: #909195;
 }
 
 .logo_external {
     background-color: #5063d8;
+}
+
+.logo_saving {
+    background: url('res/growth.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .logo_loan {
@@ -36,9 +40,12 @@
     background-position: center;
 }
 
-.logo_saving {
-    background: url('res/growth.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+.title {
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
 }
